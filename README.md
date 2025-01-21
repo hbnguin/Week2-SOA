@@ -2,32 +2,32 @@
 # Tổng hợp kết quả dự án
 
 ## 1. Giới thiệu chung
-Dự án này xây dựng một **Minimal API** sử dụng .NET, với **In-Memory Database** được tích hợp để quản lý danh sách công việc (To-Do Items). API cung cấp các chức năng CRUD (Create, Read, Update, Delete) đơn giản và hiệu quả.
+# Mô tả Dự Án: Minimal API với .NET
 
----
+Dự án này hướng đến việc xây dựng một ứng dụng **Minimal API** dựa trên nền tảng **.NET**, tập trung vào việc quản lý danh sách công việc (To-Do Items). Thông qua việc sử dụng **In-Memory Database**, hệ thống cung cấp một môi trường lưu trữ dữ liệu tạm thời, giúp đơn giản hóa việc thử nghiệm và triển khai các chức năng cơ bản.
+## Đặc điểm kỹ thuật
+
+- **Minimal API**: Được sử dụng để tối ưu hóa cấu trúc và hiệu suất, giảm bớt sự phức tạp so với các API truyền thống.
+- **In-Memory Database**: Tích hợp sẵn trong dự án, giúp lưu trữ dữ liệu tạm thời mà không cần thiết lập cơ sở dữ liệu phức tạp, phù hợp cho giai đoạn phát triển và thử nghiệm.
+- **Đơn giản và hiệu quả**: Cấu trúc API được xây dựng với mục tiêu dễ hiểu, dễ mở rộng và dễ dàng triển khai.
+
+Dự án này là một giải pháp hoàn hảo để học tập và thử nghiệm các khái niệm cơ bản trong phát triển API với .NET, đồng thời cung cấp nền tảng cho việc mở rộng các tính năng phức tạp hơn trong tương lai.
 
 ## 2. Kết quả chính
 
 ### Các chức năng chính của API
-- **Thêm công việc mới** (POST):  
-  Cho phép thêm công việc mới với các thông tin như tên (`Name`) và trạng thái hoàn thành (`IsComplete`).
 
-- **Truy xuất danh sách công việc** (GET):  
-  Lấy toàn bộ danh sách công việc hiện có từ cơ sở dữ liệu.
-
-- **Lọc danh sách công việc đã hoàn thành** (GET):  
-  Lấy các công việc có trạng thái `IsComplete = true`.
-
-- **Xem chi tiết công việc** (GET):  
-  Truy cập thông tin chi tiết của một công việc cụ thể dựa trên `Id`.
-
-- **Cập nhật công việc** (PUT):  
-  Chỉnh sửa tên (`Name`) hoặc trạng thái hoàn thành (`IsComplete`) của công việc.
-
-- **Xóa công việc** (DELETE):  
-  Xóa công việc khỏi danh sách dựa trên `Id` của công việc.
+| Chức năng                     | HTTP Method | Mô tả                                                                 |
+|-------------------------------|-------------|----------------------------------------------------------------------|
+| **Thêm công việc mới**        | POST        | Cho phép thêm công việc mới với các thông tin như tên (`Name`) và trạng thái hoàn thành (`IsComplete`). |
+| **Truy xuất danh sách công việc** | GET      | Lấy toàn bộ danh sách công việc hiện có từ cơ sở dữ liệu.            |
+| **Lọc danh sách công việc đã hoàn thành** | GET | Lấy các công việc có trạng thái `IsComplete = true`.                 |
+| **Xem chi tiết công việc**    | GET         | Truy cập thông tin chi tiết của một công việc cụ thể dựa trên `Id`.  |
+| **Cập nhật công việc**        | PUT         | Chỉnh sửa tên (`Name`) hoặc trạng thái hoàn thành (`IsComplete`) của công việc. |
+| **Xóa công việc**             | DELETE      | Xóa công việc khỏi danh sách dựa trên `Id` của công việc.            |
 
 ---
+
 
 ## 3. Danh sách Endpoint của API
 
@@ -77,17 +77,15 @@ Dưới đây là các bước kiểm thử API thông qua các công cụ như 
    - Body:
      ```json
      {
-       "name": "walk dog Test Put Method",
+       "name": "walk dog - Modified",
        "isComplete": true
      }
      ```
      ![Hình minh họa](./photos/PUT.png)
 
 ---
-
 ## 5. Công nghệ sử dụng
-- **Back-End**: ASP.NET Core Minimal API, Entity Framework Core
-- **Cơ sở dữ liệu**: In-Memory Database
-- **Quản lý yêu cầu HTTP**: HTTP Client (`MinimalAPI.http` file)
-
----
+- **Ngôn ngữ lập trình**: C# kết hợp với .NET để xây dựng các API RESTful mạnh mẽ và dễ mở rộng.
+- **Cơ sở dữ liệu**: Sử dụng cơ chế In-Memory để lưu trữ dữ liệu tạm thời, giúp dễ dàng kiểm thử và triển khai.
+- **Công cụ kiểm thử API**: Các yêu cầu HTTP được kiểm thử bằng Postman và tệp `MinimalAPI.http` cho phép chạy thử nhanh chóng mà không cần giao diện phức tạp.
+- **Framework hỗ trợ**: ASP.NET Core cung cấp các tính năng tối ưu hóa hiệu suất và bảo mật tích hợp sẵn.
